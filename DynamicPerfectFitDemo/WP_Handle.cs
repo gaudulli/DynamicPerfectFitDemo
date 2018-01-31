@@ -14,10 +14,12 @@ namespace DynamicPerfectFitDemo
     class WP_Handle
     {
 
-
+        //comment out these declarations when using the dynamic version
         public WordPerfect.PerfectScript wp;
         public PerfectFit.PerfectScript pf;
 
+
+        //uncomment these declarations when using the dynamic version
         //public dynamic wp { get; set; }
         //public dynamic pf { get; set; }
         //GenericPerfectScript GPS;
@@ -27,6 +29,8 @@ namespace DynamicPerfectFitDemo
             initPerfectScript();
         }
 
+
+        //comment out this method when using dynamic version
         public void initPerfectScript()
         {
             if (wp == null)
@@ -36,7 +40,7 @@ namespace DynamicPerfectFitDemo
             }
         }
 
-
+        //uncomment this method when attempting to run the dynamic version of WP and PF
         //public void initPerfectScript()
         //{
         //    if (wp == null)
@@ -54,7 +58,6 @@ namespace DynamicPerfectFitDemo
                 initPerfectScript();    // it seems silly to create PS just to destroy it, but this is just in 
                                         // case PS is already null, but for some reason has not been released as a COM object                             
             }
-            //wp.WPActivate();
             Marshal.ReleaseComObject(pf);
             Marshal.ReleaseComObject(wp);
 
